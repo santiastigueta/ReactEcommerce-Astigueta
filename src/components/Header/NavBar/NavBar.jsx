@@ -1,6 +1,7 @@
 
 import React from 'react'
-
+import './CartWidget/CartWidget'
+import CartWidget from './CartWidget/CartWidget';
 
 const styles = {
     Header: {
@@ -16,7 +17,7 @@ const NavBar = (props) => {
             <ul className="links">
                 <li><a href=""><i class="fas fa-user"></i>{props.user}</a></li>
                 <li><a href=""><i class="fas fa-store fa-lg"></i>{props.store}</a></li>
-                <li><a href=""><i class="fas fa-shopping-cart"></i>{props.cart}</a></li>
+                <li><a href=""> <CartWidget cart='Cart' /> </a></li>
             </ul>
         </div>
     );
