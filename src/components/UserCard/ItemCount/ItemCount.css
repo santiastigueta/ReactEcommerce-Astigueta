@@ -1,0 +1,16 @@
+.ItemButtons {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(176, 176, 177);
+    padding: 10px;
+}
+
+button {
+    width: 40px;
+    background-color: rgb(207, 177, 189);
+}
+
+.ItemCount>p {
+    color: #fff;
+    background-color: rgb(125, 126, 126);
+}

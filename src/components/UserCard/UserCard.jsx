@@ -1,10 +1,11 @@
 
 import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 
 import './UserCard.css'
 
-
+//componentes
+import ItemCount from './ItemCount/ItemCount';
 
 const UserCard = (props) => (
     <div className="usercard">
@@ -17,13 +18,9 @@ const UserCard = (props) => (
                     {props.description}
                 </Card.Description>
             </Card.Content>
-            <Card.Content extra>
-                <a>
-                    <Icon name='user' />
-                    {props.purchases} purchases
-                </a>
-            </Card.Content>
+            <ItemCount initial='1' stock='10' />
         </Card>
+
     </div>
 
 
