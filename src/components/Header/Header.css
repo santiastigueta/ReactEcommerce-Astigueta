@@ -9,6 +9,7 @@
     list-style: none;
     justify-content: flex-start;
     width: 100%;
+    align-items: center;
 }
 
 .links li a {

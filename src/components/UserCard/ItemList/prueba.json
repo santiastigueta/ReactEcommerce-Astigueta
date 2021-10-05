@@ -1,0 +1,13 @@
+[{
+        "id": 1,
+        "title": "Nvidia GeForce RTX 30 Series RTX 3090",
+        "description": "Veloz y duradero, cuenta con 10496 núcleos. Apropiado para el uso de tecnologías más modernas. resolucion de 7680x4320",
+        "url": "https://http2.mlstatic.com/D_NQ_NP_665641-MLA44039957407_112020-O.webp"
+    },
+    {
+        "id": 2,
+        "title": "Nvidia Asus GeForce RTX 30 Series RTX 3070",
+        "description": "Cuenta con 5888 núcleos, por lo que la interfaz de la placa será algo sorprendente,su resolución de 7680x4320 no te defraudará",
+        "url": "https://http2.mlstatic.com/D_NQ_NP_890511-MLA46302132691_062021-O.webp"
+    }
+]

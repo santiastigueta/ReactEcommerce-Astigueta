@@ -1,19 +1,23 @@
 
 import React from 'react'
-import './CartWidget/CartWidget'
+
+
+//componentes
 import CartWidget from './CartWidget/CartWidget';
 
 const styles = {
     Header: {
-        paddingLeft: 50
+        paddingLeft: 100
+    },
+    Title: {
+        paddingTop: 20
     }
-
 }
 
 const NavBar = (props) => {
     return (
         <div className="Navbar" style={styles.Header}>
-            <h1>MyLogo</h1>
+            <h1 style={styles.Title}>MyLogo</h1>
             <ul className="links">
                 <li><a href=""><i class="fas fa-user"></i>{props.user}</a></li>
                 <li><a href=""><i class="fas fa-store fa-lg"></i>{props.store}</a></li>
