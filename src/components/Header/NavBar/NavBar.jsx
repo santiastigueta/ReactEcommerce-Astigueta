@@ -1,5 +1,6 @@
 
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 //componentes
@@ -14,17 +15,20 @@ const styles = {
     }
 }
 
-const NavBar = (props) => {
+const NavBar = () => {
     return (
         <div className="Navbar" style={styles.Header}>
             <h1 style={styles.Title}>MyLogo</h1>
             <ul className="links">
-                <li><a href=""><i class="fas fa-user"></i>{props.user}</a></li>
-                <li><a href=""><i class="fas fa-store fa-lg"></i>{props.store}</a></li>
-                <li><a href=""> <CartWidget cart='Cart' /> </a></li>
+                <Link to="/" className="li">Home
+                </Link>
+                <Link to="/contact" className="li">Contact
+                </Link>
+                <Link to="/cart" className="li">Cart
+                </Link>
             </ul>
         </div>
     );
 }
 
-export default NavBar
+export default NavBar;

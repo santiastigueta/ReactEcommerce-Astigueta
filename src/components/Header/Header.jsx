@@ -4,17 +4,9 @@ import './Header.css';
 //componentes
 import NavBar from './NavBar/NavBar';
 
-
-
 const Header = () => {
     return (
-        <div className="Header">
-            <NavBar
-                user='usuario'
-                cart='carro'
-                store='tienda'
-            />
-        </div>
+        <NavBar />
     );
 }
 

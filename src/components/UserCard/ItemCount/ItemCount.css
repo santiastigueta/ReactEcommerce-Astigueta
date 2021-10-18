@@ -5,7 +5,7 @@
     padding: 10px;
 }
 
-button {
+.itemCountButton {
     width: 40px;
     background-color: rgb(255, 255, 255);
 }

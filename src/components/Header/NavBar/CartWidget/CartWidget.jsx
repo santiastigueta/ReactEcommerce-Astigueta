@@ -1,9 +1,9 @@
 import React from 'react'
 
-const CartWidget = (props) => {
+const CartWidget = () => {
     return (
         <div className='CartWidget'>
-            <i class="fas fa-shopping-cart"></i>{props.cart}
+            <i class="fas fa-shopping-cart"></i>cart
         </div>
     )
 }

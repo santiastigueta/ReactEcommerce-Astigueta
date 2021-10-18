@@ -3,6 +3,7 @@ import './ItemCount.css'
 
 const ItemCount = ({ initial, stock }) => {
     const [counter, setCounter] = useState(parseInt(initial))
+
     const onAdd = () => {
         if (stock > counter) {
             setCounter(counter + 1);
@@ -18,9 +19,9 @@ const ItemCount = ({ initial, stock }) => {
     return (
         <div className="ItemCount" >
             <div className='ItemButtons'>
-                <button onClick={onRemove}>-</button>
+                <button onClick={onRemove} className="itemCountButton">-</button>
                 <p>{counter}</p>
-                <button onClick={onAdd}>+</button>
+                <button onClick={onAdd} className="itemCountButton">+</button>
             </div>
             <p>stock disponible: {stock}</p>
         </div>

@@ -1,18 +1,31 @@
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import './App.css';
-
-// Componentes
+//componentes
 import Header from './components/Header/Header';
-import CardList from './components/UserCard/ItemList/ItemList'
+
+//views:
+import Home from './views/Home';
+import Cart from './views/Cart';
+import Contact from './views/Contact';
+import ItemDetail from './views/ItemDetail/ItemDetail';
 
 const App = () => {
-  return (
-    <div className="App">
-      <Header />
-      <CardList />
-    </div>
 
+  return (
+    <Router>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/detail/:id" component={ItemDetail} />
+        </Switch>
+      </div>
+    </Router>
   );
+
 }
 
 export default App;

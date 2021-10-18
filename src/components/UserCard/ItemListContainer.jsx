@@ -1,30 +1,31 @@
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import prueba from './prueba.json';
+import ItemList from './ItemList/ItemList';
+import Spinner from '../Loader/Loader';
 
-import React from 'react'
-import { Card, Image } from 'semantic-ui-react'
-import { Button } from 'semantic-ui-react'
+const ItemListContainer = () => {
+    const [productList, setProductList] = useState([]);
+    const [isloading, setIsLoading] = useState(false);
 
-import './ItemListContainer.css'
+    console.log(productList);
 
-//componentes
-/* import ItemCount from './ItemCount/ItemCount'; */
+    useEffect(() => {
+        setIsLoading(true)
+        axios('https://breakingbadapi.com/api/characters').then((json) =>
+            setProductList(json.data)
+        );
+        setIsLoading(false)
+    }, []);
 
-const ItemListContainer = ({ data }) => (
 
+    return (
+        <div className="ItemListContainer">
+            {isloading ? <Spinner /> : <ItemList data={productList} />}
+        </div>
 
-    <div className="ItemListContainer">
-        <Card>
-            <Image src={data.url} wrapped ui={false} />
-            <Card.Content>
-                <Card.Header>{data.title}</Card.Header>
-                <Card.Meta>
-                    <Button positive>Mostrar más detalles</Button>
-                </Card.Meta>
-                <Card.Description>{data.description}</Card.Description>
-            </Card.Content>
-            {/*  <ItemCount />  */}
-        </Card>
-    </div>
-);
+    );
+}
 
 export default ItemListContainer;
 
