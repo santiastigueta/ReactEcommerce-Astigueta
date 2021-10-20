@@ -12,7 +12,8 @@ const ItemDetail = ({ match }) => {
 
     let chardID = match.params.id;
 
-    const [product, setProduct] = useState([])
+    const [product, setProduct] = useState([]);
+    const [terminar, setTerminar] = useState(false);
 
     useEffect(() => {
         axios(`https://breakingbadapi.com/api/characters/${chardID}`).then(res => {
@@ -20,6 +21,11 @@ const ItemDetail = ({ match }) => {
         })
     }, [chardID]);
 
+    const onAdd = (cantidad) => {
+        setProduct(cantidad);
+        setTerminar(!terminar)
+        alert('fin')
+    }
     return (
         <div className="CharacterDetail">
             {product.map((product) => {
@@ -29,12 +35,11 @@ const ItemDetail = ({ match }) => {
                         <Card.Content>
                             <Card.Header>{product.name}</Card.Header>
                             <Card.Meta>
-                                <Button primary>Comprar ya</Button>
-                                <Button secondary>Carrito</Button>
+                                <Button secondary>Volver</Button>
                             </Card.Meta>
                             <Card.Description>{product.occupation}</Card.Description>
                         </Card.Content>
-                        <ItemCount />
+                        <ItemCount initial='1' stock='10' onclick={(cant) => onAdd(cant)} />
                     </Card>
                 );
             })}
