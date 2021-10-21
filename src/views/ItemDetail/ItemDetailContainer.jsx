@@ -19,7 +19,7 @@ const ItemDetailContainer = ({ match }) => {
 
     return (
         <div>
-            <ItemDetail details={product} />
+            {product && <ItemDetail details={product} />}
         </div>
     )
 }

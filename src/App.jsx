@@ -9,6 +9,7 @@ import Home from './views/Home';
 import Cart from './views/Cart';
 import Contact from './views/Contact';
 import ItemDetail from './views/ItemDetail/ItemDetail';
+import ItemDetailContainer from './views/ItemDetail/ItemDetailContainer';
 
 const App = () => {
 
@@ -20,7 +21,7 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <Route path="/contact" component={Contact} />
           <Route path="/cart" component={Cart} />
-          <Route path="/detail/:id" component={ItemDetail} />
+          <Route path="/detail/:id" component={ItemDetailContainer} />+
         </Switch>
       </div>
     </Router>
