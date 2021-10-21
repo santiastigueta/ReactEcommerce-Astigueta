@@ -8,7 +8,7 @@ import ItemCount from '../../components/UserCard/ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 
 
-const ItemDetail = ({ details }) => {
+const ItemDetail = ({ data }) => {
 
     const [compra, setCompra] = useState();
     const [terminar, setTerminar] = useState(false);
@@ -17,20 +17,19 @@ const ItemDetail = ({ details }) => {
     const onAdd = (cantidad) => {
         setCompra(cantidad);
         setTerminar(!terminar);
-        alert(`cantidad comprada: ${compra}`);
     }
 
     return (
         <div className="CharacterDetail">
 
             <Card>
-                <Image src={details.img} wrapped ui={false} />
+                <Image src={data.img} wrapped ui={false} />
                 <Card.Content>
-                    <Card.Header>{details.name}</Card.Header>
+                    <Card.Header>{data.name}</Card.Header>
                     <Card.Meta>
                         <Button secondary>Volver</Button>
                     </Card.Meta>
-                    <Card.Description>{details.occupation}</Card.Description>
+                    <Card.Description>{data.occupation}</Card.Description>
                 </Card.Content>
 
                 {terminar ? (

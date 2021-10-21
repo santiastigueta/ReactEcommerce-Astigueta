@@ -17,9 +17,11 @@ const ItemDetailContainer = ({ match }) => {
         })
     }, [chardID]);
 
+    console.log(product);
+
     return (
         <div>
-            {product && <ItemDetail details={product} />}
+            <ItemDetail data={product} />
         </div>
     )
 }
