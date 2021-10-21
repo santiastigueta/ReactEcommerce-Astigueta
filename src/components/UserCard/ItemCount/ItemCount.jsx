@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ItemCount.css';
 import { Button, Item } from 'semantic-ui-react';
 
-const ItemCount = ({ initial, stock, props }) => {
+const ItemCount = ({ initial, stock, onClick }) => {
     const [counter, setCounter] = useState(parseInt(initial))
 
     const Add = () => {
@@ -25,7 +25,7 @@ const ItemCount = ({ initial, stock, props }) => {
                 <button onClick={Add} className="itemCountButton">+</button>
             </div>
             <p>stock disponible: {stock}</p>
-            <button onClick={() => props.onClick(counter)}>Añadir al carrito</button>
+            <button onClick={() => onClick(counter)}>Añadir al carrito</button>
         </div>
     );
 }
