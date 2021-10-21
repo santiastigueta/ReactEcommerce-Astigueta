@@ -5,6 +5,7 @@ import axios from 'axios';
 
 //componentes
 import ItemCount from '../../components/UserCard/ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
 
 
 const ItemDetail = ({ details }) => {
@@ -33,7 +34,7 @@ const ItemDetail = ({ details }) => {
                 </Card.Content>
 
                 {terminar ? (
-                    <button>Terminar compra</button>
+                    <Link to='/Cart'> <button>Terminar compra</button></Link>
                 ) : (
                     <ItemCount initial='1' stock='10' onClick={(cant) => onAdd(cant)} />
                 )}
