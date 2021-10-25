@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //componentes
@@ -9,22 +9,26 @@ import Home from './views/Home';
 import Cart from './views/Cart';
 import Contact from './views/Contact';
 import ItemDetail from './views/ItemDetail/ItemDetail';
-import ItemDetailContainer from './views/ItemDetail/ItemDetailContainer';
+
+//Context:
+import { CartProvider } from './CartContext';
 
 const App = () => {
 
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/cart" component={Cart} />
-          <Route path="/detail/:id" component={ItemDetailContainer} />+
-        </Switch>
-      </div>
-    </Router>
+    <CartProvider>
+      <Router>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/cart" component={Cart} />
+            <Route path="/detail/:id" component={ItemDetail} />+
+          </Switch>
+        </div>
+      </Router>
+    </CartProvider>
   );
 
 }
