@@ -2,16 +2,15 @@ import React, { StrictMode } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //componentes
-import Header from './components/Header/Header';
+import NavBar from './components/NavBar/NavBar';
 
 //views:
-import Home from './views/Home';
 import Cart from './views/Cart';
 import Contact from './views/Contact';
-import ItemDetail from './views/ItemDetail/ItemDetail';
-
+import ItemListContainer from './components/UserCard/ItemListContainer';
 //Context:
 import { CartProvider } from './CartContext';
+import ItemDetailContainer from './views/ItemDetail/ItemDetailContainer';
 
 const App = () => {
 
@@ -19,12 +18,13 @@ const App = () => {
     <CartProvider>
       <Router>
         <div className="App">
-          <Header />
+          <NavBar />
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact component={ItemListContainer} />
+            <Route path="/category/:id" component={ItemListContainer} />
             <Route path="/contact" component={Contact} />
             <Route path="/cart" component={Cart} />
-            <Route path="/detail/:id" component={ItemDetail} />+
+            <Route path="/item/:id" component={ItemDetailContainer} />
           </Switch>
         </div>
       </Router>
