@@ -9,25 +9,26 @@ export const CartProvider = ({ children }) => {
     const addItem = (item, cantidad) => {
 
         if (isInCart(item.id)) {
-            alert("Este producto ya fue agregado.")
             return;
         }
-
         setItems([...items, { cantidad: cantidad, ...item }]);
     }
 
     const removeItem = (itemId) => {
-        setItems(items.filter(item => item.id !== itemId))
+
+        setItems(items.filter(item => item.id !== itemId));
+    }
+
+    const clear = () => {
+        setItems([]);
     }
 
     const isInCart = (itemId) => {
-        return !!items.find(item => item.id === itemId)
+        return !!items.find(item => item.id === itemId);
     }
 
-    const clear = () => setItems([]);
-
     return (
-        <CartContext.Provider value={[items, setItems, addItem, removeItem, isInCart, clear]}>
+        <CartContext.Provider value={[items, addItem, removeItem, isInCart, clear]}>
             {children}
         </CartContext.Provider >
     );

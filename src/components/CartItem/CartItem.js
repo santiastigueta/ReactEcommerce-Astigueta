@@ -1,39 +1,37 @@
-import { Avatar, Divider, Grid, IconButton, ListItem, ListItemAvatar, Typography } from "@mui/material";
-import DeleteIcon from '@mui/icons-material/Delete';
+import React from 'react'
+import { Button, Card, Image } from 'semantic-ui-react'
 
 const CartItem = ({ item, onDelete }) => {
-
     return (
-        <>
-            <ListItem alignItems="flex-start"
-                secondaryAction={
-                    <IconButton edge="end" aria-label="delete" onClick={() => onDelete(item.id)}>
-                        <DeleteIcon />
-                    </IconButton>
-                }
-            >
-                <ListItemAvatar>
-                    <Avatar alt={item.title} src={item.pictureUrl} variant="square" sx={{ width: 70, height: 70 }} />
-                </ListItemAvatar>
-                <Grid container alignItems="center">
-                    <Grid item xs>
-                        <Typography gutterBottom variant="h6" component="div">
-                            {item.title}
-                        </Typography>
-                    </Grid>
-                    <Grid item>
-                        <Typography gutterBottom variant="h6" component="div">
-                            ${item.price * item.cantidad}
-                        </Typography>
-                        <Typography color="text.secondary" variant="body2">
-                            {item.cantidad} Unidad{item.cantidad > 1 && 'es'}
-                        </Typography>
-                    </Grid>
-                </Grid>
-            </ListItem>
-            <Divider variant="inset" component="li" />
-        </>
+        <div>
+            <Card>
+                <Card.Content>
+                    <Image
+                        floated='right'
+                        size='mini'
+                        src='/images/avatar/large/steve.jpg'
+                    />
+                    <Card.Header>{item.title}</Card.Header>
+                    <Card.Meta>{item.price}</Card.Meta>
+                    <Card.Description>
+                        {item.description}
+                    </Card.Description>
+                </Card.Content>
+                <Card.Meta>${item.price * item.cantidad}</Card.Meta>
+                <Card.Meta>{item.cantidad} Unidad{item.cantidad > 1 && 'es'}</Card.Meta>
+                <Card.Content extra>
+                    <div className='ui two buttons'>
+                        <Button basic color='green'>
+
+                        </Button>
+                        <Button basic color='red' onClick={() => onDelete(item.id)}>
+                            <i class="fas fa-trash-alt"></i>
+                        </Button>
+                    </div>
+                </Card.Content>
+            </Card>
+        </div>
     );
 }
 
-export default CartItem;
+export default CartItem
