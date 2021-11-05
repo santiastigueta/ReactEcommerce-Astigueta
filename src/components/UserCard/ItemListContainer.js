@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import itemsMock from './productos';
 import ItemList from './ItemList/ItemList';
 import Spinner from '../Loader/Loader';
 

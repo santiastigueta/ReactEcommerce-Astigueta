@@ -22,7 +22,6 @@ const ItemCartActions = ({ itemInCart, onAdd, stock }) => {
 
 const ItemDetail = ({ item }) => {
 
-    const { url, price, title, description, stock } = item;
     const [itemInCart, setItemInCart] = useState(false);
     const { addItem } = useContext(CartContext);
 
@@ -38,24 +37,24 @@ const ItemDetail = ({ item }) => {
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
-                            {title}
+                            {item.title}
                         </Typography>
                         <Typography variant="h6" color="text.secondary">
-                            {price}
+                            ${item.price}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            {description}
+                            {item.description}
                         </Typography>
                     </CardContent>
                     <CardActions sx={{ display: 'flex', alignContent: 'space-between' }}>
-                        <ItemCartActions itemInCart={itemInCart} onAdd={onAddToCart} stock={stock} />
+                        <ItemCartActions itemInCart={itemInCart} onAdd={onAddToCart} stock={item.stock} />
                     </CardActions>
                 </Box>
                 <CardMedia
                     component="img"
                     sx={{ width: 151, margin: 'auto' }}
-                    image={url}
-                    alt="green iguana"
+                    image={item.url}
+                    alt="product image"
                 />
             </Card>
         </>
