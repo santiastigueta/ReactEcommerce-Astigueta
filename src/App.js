@@ -1,4 +1,4 @@
-import React, { StrictMode } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //componentes
@@ -11,6 +11,7 @@ import ItemListContainer from './components/UserCard/ItemListContainer';
 //Context:
 import { CartProvider } from './CartContext';
 import ItemDetailContainer from './views/ItemDetail/ItemDetailContainer';
+
 
 const App = () => {
 

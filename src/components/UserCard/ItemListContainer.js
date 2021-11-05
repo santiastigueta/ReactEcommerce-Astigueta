@@ -4,16 +4,33 @@ import itemsMock from './productos';
 import ItemList from './ItemList/ItemList';
 import Spinner from '../Loader/Loader';
 
+// firebase database:
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import {db} from '../../firebase';
 
-const ItemListContainer = ({ match }) => {
+const ItemListContainer = () => {
 
-    const categoriaID = match.params.id;
     const [productList, setProductList] = useState([]);
     const [isloading, setIsLoading] = useState(true);
 
+	useEffect(() => {
+        setIsLoading(true)
+        setProductList([]);
 
+		const requestData = async () => {
+			const docs = [];
+			const items = await getDocs(collection(db, 'products'));
+			items.forEach((document) => {
+				console.log(document.id, ' => ', document.data());
+				docs.push({...document.data(), id: document.id})
+			});
+			setProductList(docs);
+            setIsLoading(false);
+		};
+		requestData();
+	}, []);
 
-    useEffect(() => {
+    /* useEffect(() => {
         setIsLoading(true);
         setProductList([]);
 
@@ -22,7 +39,7 @@ const ItemListContainer = ({ match }) => {
                 setProductList(productList);
                 setIsLoading(false);
             });
-    }, [categoriaID]);
+    }, [categoriaID]); */
 
     console.log(productList)
     return (

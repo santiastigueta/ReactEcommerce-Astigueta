@@ -8,7 +8,6 @@ import { useHistory } from 'react-router';
 
 const Item = ({ data }) => {
     const history = useHistory();
-    const { url, title, price, description } = data;
 
     const navigateItem = () => {
         history.push(`/item/${data.id}`)
@@ -17,13 +16,14 @@ const Item = ({ data }) => {
     return (
         <div className="Item">
             <Card>
-                <Image src={url} wrapped ui={false} />
+                <Image src={data.img} wrapped ui={false} />
                 <Card.Content>
-                    <Card.Header>{title}</Card.Header>
+                    <Card.Header>{data.title}</Card.Header>
                     <Card.Meta>
-                        <Card.Description>{price}</Card.Description>
+                        <Card.Description>${data.price}</Card.Description>
                     </Card.Meta>
-                    <Card.Description>{description}</Card.Description>
+                    <Card.Description>{data.description}</Card.Description>
+                    <Card.Description>{data.category}</Card.Description>
                     <Card.Meta>
                         <Button positive onClick={navigateItem}>ver mas detalles</Button>
                     </Card.Meta>
