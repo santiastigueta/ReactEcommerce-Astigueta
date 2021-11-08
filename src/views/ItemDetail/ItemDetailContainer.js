@@ -24,7 +24,8 @@ const ItemDetailContainer = () => {
 		};
 		requestData();
 	}, []);
-
+    
+    console.log(product);
     /* useEffect(() => {
 
         misProductos(productID)

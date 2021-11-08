@@ -16,18 +16,30 @@ const ItemListContainer = () => {
         setIsLoading(true)
         setProductList([]);
 
-		const requestData = async () => {
+		const getProductOneData = async () => {
 			const docs = [];
-			const items = await getDocs(collection(db, 'products'));
+            const q = query(collection(db, 'products'));
+            const y = query(collection(db, 'products_2'));
+
+			const items = await getDocs(q);
 			items.forEach((document) => {
 				console.log(document.id, ' => ', document.data());
 				docs.push({...document.data(), id: document.id})
+                
+			});
+
+            const items2 = await getDocs(y);
+			items2.forEach((document) => {
+				console.log(document.id, ' => ', document.data());
+				docs.push({...document.data(), id: document.id})
+                
 			});
 			setProductList(docs);
             setIsLoading(false);
 		};
-		requestData();
+		getProductOneData();
 	}, []);
+
 
     /* useEffect(() => {
         setIsLoading(true);

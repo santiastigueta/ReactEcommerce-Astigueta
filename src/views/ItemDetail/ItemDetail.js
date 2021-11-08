@@ -1,9 +1,11 @@
+
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from 'react-router-dom';
 import ItemCount from '../../components/UserCard/ItemCount/ItemCount';
 import { CartContext } from "../../CartContext";
+
 
 const ButtonTerminar = () => <Button component={Link} to="/cart" variant="contained" color="primary">Terminar compra</Button>;
 
@@ -32,32 +34,33 @@ const ItemDetail = ({ item }) => {
     }
 
     return (
-        <>
-            <Card sx={{ display: 'flex' }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            {item.title}
-                        </Typography>
-                        <Typography variant="h6" color="text.secondary">
-                            ${item.price}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            {item.description}
-                        </Typography>
-                    </CardContent>
-                    <CardActions sx={{ display: 'flex', alignContent: 'space-between' }}>
-                        <ItemCartActions itemInCart={itemInCart} onAdd={onAddToCart} stock={item.stock} />
-                    </CardActions>
-                </Box>
-                <CardMedia
-                    component="img"
-                    sx={{ width: 151, margin: 'auto' }}
-                    image={item.url}
-                    alt="product image"
-                />
-            </Card>
-        </>
+        <Card sx={{ maxWidth: 345 }}>
+        <CardMedia
+          component="img"
+          height="140"
+          image={item.img}
+          alt="green iguana"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {item.title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {item.description}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {item.price}
+          </Typography>
+        </CardContent>
+        <CardActions>
+            <ItemCartActions itemInCart={itemInCart} onAdd={onAddToCart} stock={item.stock} />
+        </CardActions>
+        <CardActions>
+          <Button size="small">Share</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+      
     );
 }
 

@@ -22,8 +22,8 @@ const NavBar = () => {
             <h1 style={styles.Title}>MyLogo</h1>
             <ul className="links">
                 <Button component={Link} to="/" color="inherit">Home</Button>
-                <Button component={Link} to="/category/1" color="inherit">Intel</Button>
-                <Button component={Link} to="/category/2" color="inherit">AMD</Button>
+                <Button component={Link} to="/procesadores" color="inherit">Procesadores</Button>
+                <Button component={Link} to="/placas" color="inherit">Placas de Video</Button>
                 <Button component={Link} to="/contact" color="inherit">Contacto</Button>
                 <CartWidget />
             </ul>

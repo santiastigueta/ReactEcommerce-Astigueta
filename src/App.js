@@ -8,9 +8,12 @@ import NavBar from './components/NavBar/NavBar';
 import Cart from './views/Cart';
 import Contact from './views/Contact';
 import ItemListContainer from './components/UserCard/ItemListContainer';
+import ItemDetailContainer from './views/ItemDetail/ItemDetailContainer';
+import Procesadores from './views/Procesadores';
+import placas from './views/placas'
 //Context:
 import { CartProvider } from './CartContext';
-import ItemDetailContainer from './views/ItemDetail/ItemDetailContainer';
+
 
 
 const App = () => {
@@ -22,7 +25,8 @@ const App = () => {
           <NavBar />
           <Switch>
             <Route path="/" exact component={ItemListContainer} />
-            <Route path="/category/:id" component={ItemListContainer} />
+            <Route path="/placas" component={placas} />
+            <Route path="/procesadores" component={Procesadores} />
             <Route path="/contact" component={Contact} />
             <Route path="/cart" component={Cart} />
             <Route path="/item/:id" component={ItemDetailContainer} />
