@@ -27,7 +27,7 @@ const CategoryOneContainer = () => {
 				docs.push({...document.data(), id: document.id})
                 
 			});
-            // docs.filter(x => x.category.toString() === docs.category);
+            
 			setProductList(docs);
             setIsLoading(false);
 		};
