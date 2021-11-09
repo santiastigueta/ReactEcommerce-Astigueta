@@ -36,21 +36,11 @@ const ItemListContainer = () => {
 			});
 			setProductList(docs);
             setIsLoading(false);
-		};
+		}; 
 		getProductOneData();
 	}, []);
 
 
-    /* useEffect(() => {
-        setIsLoading(true);
-        setProductList([]);
-
-        itemsMock(categoriaID)
-            .then((productList) => {
-                setProductList(productList);
-                setIsLoading(false);
-            });
-    }, [categoriaID]); */
 
     console.log(productList)
     return (
