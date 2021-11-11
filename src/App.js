@@ -7,10 +7,10 @@ import NavBar from './components/NavBar/NavBar';
 //views:
 import Cart from './views/Cart';
 import Contact from './views/Contact';
-import ItemListContainer from './components/UserCard/ItemListContainer';
 import ItemDetailContainer from './views/ItemDetail/ItemDetailContainer';
 import Procesadores from './views/Procesadores';
 import placas from './views/placas'
+import home from './views/home';
 //Context:
 import { CartProvider } from './CartContext';
 
@@ -24,7 +24,7 @@ const App = () => {
         <div className="App">
           <NavBar />
           <Switch>
-            <Route path="/" exact component={ItemListContainer} />
+            <Route path="/" exact component={home} />
             <Route path="/placas" component={placas} />
             <Route path="/procesadores" component={Procesadores} />
             <Route path="/contact" component={Contact} />

@@ -9,7 +9,7 @@ const CartItem = ({ item, onDelete }) => {
                     <Image
                         floated='right'
                         size='mini'
-                        src='/images/avatar/large/steve.jpg'
+                        Image={item.img}
                     />
                     <Card.Header>{item.title}</Card.Header>
                     <Card.Meta>{item.price}</Card.Meta>
@@ -21,9 +21,6 @@ const CartItem = ({ item, onDelete }) => {
                 <Card.Meta>{item.cantidad} Unidad{item.cantidad > 1 && 'es'}</Card.Meta>
                 <Card.Content extra>
                     <div className='ui two buttons'>
-                        <Button basic color='green'>
-
-                        </Button>
                         <Button basic color='red' onClick={() => onDelete(item.id)}>
                             <i class="fas fa-trash-alt"></i>
                         </Button>

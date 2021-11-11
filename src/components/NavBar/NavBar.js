@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 import './NavBar.css';
-
+import Cart from '../../views/Cart';
 //componentes
 import CartWidget from './CartWidget';
 
@@ -25,7 +25,7 @@ const NavBar = () => {
                 <Button component={Link} to="/procesadores" color="inherit">Procesadores</Button>
                 <Button component={Link} to="/placas" color="inherit">Placas de Video</Button>
                 <Button component={Link} to="/contact" color="inherit">Contacto</Button>
-                <CartWidget />
+                <Button component={Link} to="/cart" color="inherit"><CartWidget/></Button>
             </ul>
         </div>
 

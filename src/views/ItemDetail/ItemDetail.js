@@ -49,15 +49,11 @@ const ItemDetail = ({ item }) => {
             {item.description}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {item.price}
+            ${item.price}
           </Typography>
         </CardContent>
         <CardActions>
             <ItemCartActions itemInCart={itemInCart} onAdd={onAddToCart} stock={item.stock} />
-        </CardActions>
-        <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
         </CardActions>
       </Card>
       

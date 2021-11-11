@@ -16,7 +16,7 @@ const ItemListContainer = () => {
         setIsLoading(true)
         setProductList([]);
 
-		const getProductOneData = async () => {
+		const getProductData = async () => {
 			const docs = [];
             const q = query(collection(db, 'products'));
             const y = query(collection(db, 'products_2'));
@@ -37,7 +37,7 @@ const ItemListContainer = () => {
 			setProductList(docs);
             setIsLoading(false);
 		}; 
-		getProductOneData();
+		getProductData();
 	}, []);
 
 
@@ -45,6 +45,7 @@ const ItemListContainer = () => {
     console.log(productList)
     return (
         <>
+			<h1>Hola</h1>
             {isloading ? <Spinner /> : <ItemList productList={productList} />}
         </>
 
