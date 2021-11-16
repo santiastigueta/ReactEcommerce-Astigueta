@@ -2,17 +2,17 @@ import React from 'react'
 import { Button, Card, Image } from 'semantic-ui-react'
 
 const CartItem = ({ item, onDelete }) => {
+
     return (
         <div>
             <Card>
                 <Card.Content>
+                    <Card.Header>{item.title}</Card.Header>
                     <Image
                         floated='right'
                         size='mini'
                         Image={item.img}
                     />
-                    <Card.Header>{item.title}</Card.Header>
-                    <Card.Meta>{item.price}</Card.Meta>
                     <Card.Description>
                         {item.description}
                     </Card.Description>

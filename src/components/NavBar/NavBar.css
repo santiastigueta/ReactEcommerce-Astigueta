@@ -4,8 +4,9 @@
     flex-direction: row;
 }
 
-.links .li {
+.links {
     padding-left: 50px;
+    padding-top: 10px;
     font-size: 20px;
     line-height: 50px;
 }

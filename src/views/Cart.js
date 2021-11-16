@@ -63,11 +63,6 @@ const Cart = () => {
                         :
                         <Card>
                             <Card.Content>
-                                <Image
-                                    floated='right'
-                                    size='mini'
-                                    src='/images/avatar/large/steve.jpg'
-                                />
                                 <Card.Header>Productos:</Card.Header>
                                 <Card.Description>
                                     {items.map(item => <CartItem item={item} onDelete={removeItem}></CartItem>)}
@@ -76,6 +71,8 @@ const Cart = () => {
                             <Card.Content extra>
                                 <Card.Header>Total: ${total}</Card.Header>
                             </Card.Content>
+                            
+                            {/* USAR TEXT FIELD DE SEMANTIC UI PARA EL FORMULARIO */}
                             <Form>
                                 <Form.Group className="mb-3">
                                     <Form.Label>Nombre</Form.Label>

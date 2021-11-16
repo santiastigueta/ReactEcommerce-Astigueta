@@ -45,7 +45,6 @@ const ItemListContainer = () => {
     console.log(productList)
     return (
         <>
-			<h1>Hola</h1>
             {isloading ? <Spinner /> : <ItemList productList={productList} />}
         </>
 
