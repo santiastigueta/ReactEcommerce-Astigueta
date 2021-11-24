@@ -9,6 +9,11 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../CartContext';
 
+const styles = {
+    CartSyles: {
+        color: 'white'
+    }
+}
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
       right: -3,
@@ -31,7 +36,7 @@ const CartWidget = () => {
     return (
         
 
-        <IconButton aria-label="cart" name='cart' component={Link} to='/cart'>
+        <IconButton aria-label="cart" name='cart' component={Link} to='/cart' style={styles.CartSyles}>
             <StyledBadge badgeContent={itemsCount} color="primary">
                 <ShoppingCartIcon />
             </StyledBadge>
