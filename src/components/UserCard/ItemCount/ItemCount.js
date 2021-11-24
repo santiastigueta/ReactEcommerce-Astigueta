@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ItemCount.css';
-import { Button, Item } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
 const ItemCount = ({ initial, stock, onAdd }) => {
     const [counter, setCounter] = useState(parseInt(initial))

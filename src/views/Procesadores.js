@@ -5,7 +5,7 @@ import Spinner from '../components/Loader/Loader'
 
 
 // database :
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import { collection, query, getDocs } from 'firebase/firestore';
 import { db } from '../firebase'
 
 const CategoryOneContainer = () => {

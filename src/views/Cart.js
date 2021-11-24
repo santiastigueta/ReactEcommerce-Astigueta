@@ -7,7 +7,7 @@ import { useHistory } from 'react-router';
 import { AlertTitle } from '@mui/material';
 //firebase database:
 import {db} from '../firebase';
-import { collection, addDoc, query, doc, getDoc } from 'firebase/firestore';
+import { collection, addDoc} from 'firebase/firestore';
 
 const styles = {
     FormHeader: {
@@ -89,7 +89,7 @@ const Cart = () => {
                         :   
                             <>
                             <>  <h1>Lista de productos elegidos: </h1>
-                                <Button color='purple' onClick={clear}>Limpiar carro</Button>
+                                <Button onClick={clear}>Limpiar carro</Button>
                                 {items.map(item => <CartItem item={item} onDelete={removeItem}  key={item.id}></CartItem>)}
                             </>
                             <Header as='h2' icon style={styles.FormHeader}>

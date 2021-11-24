@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Spinner from '../../components/Loader/Loader';
 import ItemDetail from './ItemDetail';
 
-import { collection, getDocs, query, doc, getDoc } from 'firebase/firestore';
+import {doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 
 const ItemDetailContainer = ({match}) => {

@@ -12,7 +12,7 @@ const styles = {
     },
     Title: {
         paddingTop: 20,
-        color: 'purple'
+        color: 'white'
     }
 }
 

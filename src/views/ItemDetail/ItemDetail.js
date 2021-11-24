@@ -1,6 +1,5 @@
 
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
-import { Box } from "@mui/system";
 import React, { useState, useContext } from "react";
 import { Link } from 'react-router-dom';
 import ItemCount from '../../components/UserCard/ItemCount/ItemCount';
